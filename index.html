@@ -7,163 +7,203 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f8f8f8;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f8f8;
 }
 
 /* NAVBAR */
 .navbar {
-    background: linear-gradient(90deg, #000, #444);
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #fff;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.navbar h1 {
-    margin: 0;
-    letter-spacing: 2px;
+.logo {
+  font-size: 24px;
+  font-weight: bold;
 }
-
-.nav-links a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-.nav-links a:hover {
-    color: #ff4d6d;
+.logo span {
+  color: #c96;
 }
 
 /* HERO */
 .hero {
-    background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd53') no-repeat center/cover;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
+  height: 90vh;
+  background: url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
 }
 
-/* SECTION */
-section {
-    padding: 20px;
+.hero-content {
+  background: rgba(0,0,0,0.4);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 36px;
+}
+
+.hero span {
+  color: #ffb6a3;
+}
+
+.btn {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-dark {
+  background: black;
+  color: white;
+}
+
+.btn-light {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
 }
 
 /* PRODUCTS */
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.products h2 {
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: 0.3s;
+  background: white;
+  width: 260px;
+  margin: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+  transform: translateY(-5px);
 }
 
 .card img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px;
 }
 
 .price {
-    color: #ff4d6d;
-    font-weight: bold;
+  color: #c96;
+  font-weight: bold;
 }
 
-button {
-    background: #000;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    margin-top: 10px;
-    cursor: pointer;
+.card button {
+  margin: 10px;
+  width: 80%;
 }
 
-button:hover {
-    background: #ff4d6d;
+/* TESTIMONIAL */
+.testimonial {
+  background: #111;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonial p {
+  max-width: 600px;
+  margin: auto;
 }
 
 /* FOOTER */
 footer {
-    background: #000;
-    color: white;
-    text-align: center;
-    padding: 15px;
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
 </style>
-
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
-    <h1>ZIVAH</h1>
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Contact</a>
+  <div class="logo">ZI<span>VAH</span></div>
+  <div>🛍️</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Define Your <span>Unstoppable</span> Style</h1>
+    <p>Elegant fashion for every occasion</p>
+    <button class="btn btn-dark">SHOP NOW</button>
+    <button class="btn btn-light">OUR STORY</button>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <h2>Our Collection</h2>
+
+  <div class="product-grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2">
+      <h3>Anarkali Suit</h3>
+      <p class="price">₹2500</p>
+      <button class="btn btn-dark">Add to Cart</button>
     </div>
-</div>
 
-<div class="hero">
-    Discover Your Style ✨
-</div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990">
+      <h3>Kurti</h3>
+      <p class="price">₹1200</p>
+      <button class="btn btn-dark">Add to Cart</button>
+    </div>
 
-<section>
-<h2>About Us</h2>
-<p>Zivah is a modern clothing brand offering stylish outfits for all occasions.</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1621234859480-7f5d7fdd0a4c">
+      <h3>Lehenga</h3>
+      <p class="price">₹5000</p>
+      <button class="btn btn-dark">Add to Cart</button>
+    </div>
+
+  </div>
 </section>
 
-<section>
-<h2>Products</h2>
-
-<div class="products">
-
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
-    <h3>Anarkali Suit</h3>
-    <p class="price">₹2500</p>
-    <button>Add to Cart</button>
-</div>
-
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2">
-    <h3>Kurti</h3>
-    <p class="price">₹1200</p>
-    <button>Add to Cart</button>
-</div>
-
-<div class="card">
-    <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
-    <h3>Lehenga</h3>
-    <p class="price">₹5000</p>
-    <button>Add to Cart</button>
-</div>
-
-</div>
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <p>"The quality is absolutely stunning. My Anarkali suit got so many compliments!"</p>
+  <p><b>- Priya S.</b></p>
 </section>
 
-<section>
-<h2>Contact</h2>
-<p>Email: contact@zivah.com</p>
-</section>
-
+<!-- FOOTER -->
 <footer>
-© 2026 Zivah
+  © 2026 Zivah
 </footer>
 
 </body>
