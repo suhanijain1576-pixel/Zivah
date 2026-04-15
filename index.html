@@ -1,102 +1,170 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zivah Clothing</title>
-  <style>
-    body { font-family: Arial; margin: 0; }
-    header { background: #111; color: white; padding: 15px; display: flex; justify-content: space-between; }
-    nav a { color: white; margin: 0 10px; text-decoration: none; }
-    .hero { background: url('https://source.unsplash.com/1600x600/?fashion') no-repeat center/cover; color: white; padding: 100px 20px; text-align: center; }
-    .btn { padding: 10px 20px; background: black; color: white; border: none; cursor: pointer; }
-    .products { display: flex; flex-wrap: wrap; justify-content: center; }
-    .card { border: 1px solid #ddd; margin: 10px; padding: 10px; width: 250px; }
-    .card img { width: 100%; }
-    footer { background: #111; color: white; text-align: center; padding: 10px; margin-top: 20px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zivah</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f8f8;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, #000, #444);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #ff4d6d;
+}
+
+/* HERO */
+.hero {
+    background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd53') no-repeat center/cover;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* SECTION */
+section {
+    padding: 20px;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    color: #ff4d6d;
+    font-weight: bold;
+}
+
+button {
+    background: #000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff4d6d;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+
 </head>
-<body><header>
-  <h2>ZIVAH</h2>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-    <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
-  </nav>
-</header><section id="home" class="hero">
-  <h1>Define Your Style</h1>
-  <p>Trendy fashion for every occasion</p>
-</section><section id="about">
-  <h2>About Us</h2>
-  <p>Zivah is a modern clothing brand offering stylish outfits for all occasions.</p>
-</section><section id="products">
-  <h2>Products</h2>
-  <div class="products" id="product-list"></div>
-</section><section id="cart">
-  <h2>Your Cart</h2>
-  <ul id="cart-items"></ul>
-  <p>Total: ₹<span id="total">0</span></p>
-  <button class="btn" onclick="checkout()">Proceed to Payment</button>
-</section><section id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: contact@zivah.com</p>
-</section><section id="privacy">
-  <h2>Privacy Policy</h2>
-  <p>Your data is safe with us.</p>
-</section><section id="returns">
-  <h2>Return & Refund Policy</h2>
-  <p>Returns accepted within 7 days.</p>
-</section><footer>
-  <p>© 2026 Zivah</p>
-</footer><script>
-const products = [
-  { id: 1, name: "Anarkali Suit", price: 2500, img: "https://source.unsplash.com/300x300/?dress" },
-  { id: 2, name: "Kurti", price: 1200, img: "https://source.unsplash.com/300x300/?kurti" },
-  { id: 3, name: "Lehenga", price: 5000, img: "https://source.unsplash.com/300x300/?lehenga" }
-];
 
-let cart = [];
+<body>
 
-function displayProducts() {
-  const list = document.getElementById("product-list");
-  products.forEach(p => {
-    list.innerHTML += `
-      <div class="card">
-        <img src="${p.img}" />
-        <h3>${p.name}</h3>
-        <p>₹${p.price}</p>
-        <button class="btn" onclick="addToCart(${p.id})">Add to Cart</button>
-      </div>`;
-  });
-}
+<div class="navbar">
+    <h1>ZIVAH</h1>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </div>
+</div>
 
-function addToCart(id) {
-  const product = products.find(p => p.id === id);
-  cart.push(product);
-  document.getElementById("cart-count").innerText = cart.length;
-  renderCart();
-}
+<div class="hero">
+    Discover Your Style ✨
+</div>
 
-function renderCart() {
-  const items = document.getElementById("cart-items");
-  const totalEl = document.getElementById("total");
-  items.innerHTML = "";
-  let total = 0;
-  cart.forEach(p => {
-    items.innerHTML += `<li>${p.name} - ₹${p.price}</li>`;
-    total += p.price;
-  });
-  totalEl.innerText = total;
-}
+<section>
+<h2>About Us</h2>
+<p>Zivah is a modern clothing brand offering stylish outfits for all occasions.</p>
+</section>
 
-function checkout() {
-  alert("Payment Successful (Demo)");
-  cart = [];
-  renderCart();
-  document.getElementById("cart-count").innerText = 0;
-}
+<section>
+<h2>Products</h2>
 
-displayProducts();
-</script></body>
+<div class="products">
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+    <h3>Anarkali Suit</h3>
+    <p class="price">₹2500</p>
+    <button>Add to Cart</button>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2">
+    <h3>Kurti</h3>
+    <p class="price">₹1200</p>
+    <button>Add to Cart</button>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
+    <h3>Lehenga</h3>
+    <p class="price">₹5000</p>
+    <button>Add to Cart</button>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Contact</h2>
+<p>Email: contact@zivah.com</p>
+</section>
+
+<footer>
+© 2026 Zivah
+</footer>
+
+</body>
 </html>
