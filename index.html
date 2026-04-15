@@ -1,210 +1,166 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zivah</title>
+<title>ZIVAH Fashion</title>
 
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f8f8f8;
+  font-family: Arial, sans-serif;
 }
 
 /* NAVBAR */
-.navbar {
+header {
   display: flex;
   justify-content: space-between;
-  padding: 15px 20px;
-  background: #fff;
-  align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 15px;
+  background: #000;
+  color: white;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-.logo span {
-  color: #c96;
+header a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
 /* HERO */
 .hero {
-  height: 90vh;
-  background: url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf') no-repeat center/cover;
+  height: 300px;
+  background: url('https://images.unsplash.com/photo-1618354691373-d851c5c3a990') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
   text-align: center;
-  color: #fff;
 }
 
-.hero-content {
-  background: rgba(0,0,0,0.4);
-  padding: 30px;
-  border-radius: 10px;
-}
-
-.hero h1 {
-  font-size: 36px;
-}
-
-.hero span {
-  color: #ffb6a3;
-}
-
-.btn {
-  padding: 12px 25px;
-  margin: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.btn-dark {
-  background: black;
-  color: white;
-}
-
-.btn-light {
-  background: transparent;
-  border: 1px solid white;
-  color: white;
+/* SECTION */
+section {
+  padding: 20px;
+  text-align: center;
 }
 
 /* PRODUCTS */
-.products {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.products h2 {
-  margin-bottom: 20px;
-}
-
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
 .card {
-  background: white;
-  width: 260px;
-  margin: 15px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
 .card img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.card h3 {
-  margin: 10px;
-}
-
-.price {
-  color: #c96;
-  font-weight: bold;
-}
-
-.card button {
-  margin: 10px;
-  width: 80%;
-}
-
-/* TESTIMONIAL */
-.testimonial {
-  background: #111;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.testimonial p {
-  max-width: 600px;
-  margin: auto;
 }
 
 /* FOOTER */
 footer {
-  background: #000;
+  background: black;
   color: white;
-  text-align: center;
-  padding: 15px;
+  padding: 10px;
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <div class="logo">ZI<span>VAH</span></div>
-  <div>🛍️</div>
+<header>
+  <h2>ZIVAH</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Define Your Style ✨</h1>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Define Your <span>Unstoppable</span> Style</h1>
-    <p>Elegant fashion for every occasion</p>
-    <button class="btn btn-dark">SHOP NOW</button>
-    <button class="btn btn-light">OUR STORY</button>
-  </div>
+<!-- LEHENGA -->
+<section>
+<h2>Lehenga Collection</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+<p>Bridal Lehenga ₹12,999</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
+<p>Designer Lehenga ₹9,999</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1621234859480-7f5d7fdd0a4c">
+<p>Pastel Lehenga ₹8,499</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2">
+<p>Elegant Lehenga ₹10,999</p>
+</div>
+
+</div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products">
-  <h2>Our Collection</h2>
+<!-- KURTI -->
+<section>
+<h2>Kurti Collection</h2>
+<div class="grid">
 
-  <div class="product-grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990">
+<p>Yellow Kurti ₹1,499</p>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2">
-      <h3>Anarkali Suit</h3>
-      <p class="price">₹2500</p>
-      <button class="btn btn-dark">Add to Cart</button>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba7">
+<p>Blue Kurti ₹1,799</p>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990">
-      <h3>Kurti</h3>
-      <p class="price">₹1200</p>
-      <button class="btn btn-dark">Add to Cart</button>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03">
+<p>Green Kurti ₹1,299</p>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1621234859480-7f5d7fdd0a4c">
-      <h3>Lehenga</h3>
-      <p class="price">₹5000</p>
-      <button class="btn btn-dark">Add to Cart</button>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2">
+<p>Red Kurti ₹1,599</p>
+</div>
 
-  </div>
+</div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section class="testimonial">
-  <p>"The quality is absolutely stunning. My Anarkali suit got so many compliments!"</p>
-  <p><b>- Priya S.</b></p>
+<!-- ANARKALI -->
+<section>
+<h2>Anarkali Collection</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
+<p>Pink Anarkali ₹3,499</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba7">
+<p>Blue Anarkali ₹4,299</p>
+</div>
+
+</div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  © 2026 Zivah
+<p>© 2026 ZIVAH</p>
 </footer>
 
 </body>
-</html>
+  </html>
+      
